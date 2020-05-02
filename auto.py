@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 def load_data(path,filename):
-    return pd.read_csv(path + '/' + filename,keep_default_na=False)
+    return pd.read_csv(path + '/' + filename,keep_default_na=False,low_memory=False)
 
-class country_data():
+class c_data():
     def __init__(self,path,filename):
         self.data = load_data(path,filename);
         self.column = ''
@@ -78,10 +78,16 @@ class country_data():
         plt.bar(xticks,[self.data.shape[0]-n_after,n_after],facecolor='#cddc39', edgecolor='#afb42b')
         plt.show()
 
-    def count_none(self):
+    def count_none(self,none_token=''):
         col = np.array(self.data[self.column].values);
         cnt = 0
         for i in col:
-            if i == '':
+            if i == none_token:
                 cnt += 1
+        print(cnt)
         return cnt
+
+    def fill_none(self,other_col,none_token=''):
+        for i in range(self.data.shape[0]):
+            if(self.data[self.column][i] == none_token):
+                self.data.loc[i,self.column] = self.data.loc[i,other_col]

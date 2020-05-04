@@ -122,6 +122,15 @@ class col_helper():
             plt.text(x, y, '%d' % y, ha='center', va='bottom')
         plt.show()
 
+    def hist_bar(self,index,w,h,title,number):
+        fig = plt.figure(figsize=(w, h))
+        plt.title('title')
+        X = self.data[index].value_counts().index[:number]
+        Y = self.data[index].value_counts().values[:number]
+        plt.bar(X, Y, facecolor='#cddc39', edgecolor='#afb42b')
+        for x, y in zip(X, Y):
+            plt.text(x, y, '%d' % y, ha='center', va='bottom')
+
     def count_none(self, none_token=''):
         res = []
         y = 2011

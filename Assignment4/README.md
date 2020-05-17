@@ -18,7 +18,7 @@
   - IN_category_id.json
   - INvideos.csv
 
-- [Oakland Crime Statistics 2011 to 2016](https://www.kaggle.com/cityofoakland/oakland-crime-statistics-2011-to-2016))
+- [Oakland Crime Statistics 2011 to 2016](https://www.kaggle.com/cityofoakland/oakland-crime-statistics-2011-to-2016)
 
   分析的文件有:2011-2016全部。
 

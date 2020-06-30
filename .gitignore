@@ -4,3 +4,4 @@
 *.tex
 __pycache__
 data
+.vscode
